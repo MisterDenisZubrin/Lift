@@ -2,27 +2,26 @@
   <div class="building">
     <floor 
       v-for="(floor, index) in floorsNumber" 
-      :key="floor" 
-      :floorNumber="index + 1">
+      :floorNumber="index + 1"
+    >
     </floor>
     <div class="lift">
-      <shaft></shaft>
+      <shaft v-for="n in lifts"></shaft>
+      <panel :floorsNumber="floorsNumber"></panel>
     </div>
   </div>
 </template>
 <script>
 import shaft from './shaft.vue';
 import floor from './floor.vue';
+import panel from './panel.vue';
 export default {
-  components: { shaft, floor },
+  components: { shaft, panel, floor},
   data() {
     return {
-      floorsNumber: 9,
-      lifts: 1
+      floorsNumber: 6,
+      lifts: 1,
     }
-  },
-  methods: {
-
   }
 }
 </script>

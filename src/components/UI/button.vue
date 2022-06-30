@@ -1,9 +1,27 @@
 <template >
-  <button class="button"></button>
+  <button class="button" @click="setFloor"></button>
 </template>
 <script>
 export default {
-
+  props: {
+    floorNumber: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    // @click="addToQueue(floorNumber)"
+    // addToQueue(floorNumber) {
+    //   // TODO Проверка, что предыдущий этаж не этот же
+    //   // Нужно связать с лифтом
+    //   this.liftQueue.push(floorNumber);
+    // },
+    setFloor() {
+      const cabin = document.querySelector('.cabin');
+      const position = (this.floorNumber * 100) - 100;
+      cabin.style.bottom = `${position}px`;
+    }
+  }
 }
 </script>
 <style lang="scss" scoped>
@@ -12,7 +30,6 @@ export default {
   height: 20px;
   border: none;
   padding: 0;
-  margin: 25px 0 0 25px;
   box-sizing: border-box;
   background-color: green;
   cursor: pointer;

@@ -6,15 +6,15 @@
 <script>
 import cabin from './cabin.vue'
 export default {
-  components: {cabin}
+  components: { cabin },
 }
 </script>
 <style lang="scss" scoped>
-  .shaft {
-    width: 100px;
-    border: 3px dotted black;
-    box-sizing: border-box;
-    margin: 0 20px;
-    position: relative;
-  }
+.shaft {
+  width: 100px;
+  border: 1px dotted black;
+  box-sizing: border-box;
+  margin: 0 20px;
+  position: relative;
+}
 </style>
